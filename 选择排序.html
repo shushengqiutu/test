@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择排序</title>
+</head>
+
+<body>
+    <script>
+        function selectionSort(arr) {
+            var len = arr.length;
+            var minIndex
+            for (var i = 0; i < len - 1; i++) {
+                minIndex = i;
+                for (var j = i + 1; j < len; j++) {
+                    if (arr[j] < arr[minIndex]) { // 寻找最小的数
+                        minIndex = j; // 将最小数的索引保存
+                    }
+                }
+                /*  temp = arr[i];
+                  console.log(temp, 'temep')
+                  arr[i] = arr[minIndex];
+                  arr[minIndex] = temp;*/
+                [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
+            }
+            return arr;
+        }
+        var ary = [1, 6, 789, 4, 5]
+        var a1 = selectSort(ary)
+        console.log(a1)
+
+
+        function selectSort(arr) {
+
+            for (var i = 0; i < arr.length - 1; i++) {
+                var minIndex = i;
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[j] < arr[minIndex]) {
+                        minIndex = j
+                    }
+                    [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
+                }
+            }
+            return arr;
+        }
+    </script>
+</body>
+
+</html>
